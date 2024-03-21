@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=3 uid="uid://di3aew7owfkck"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_fhjxx"]
+[ext_resource type="Texture2D" uid="uid://cglfqho34yvpe" path="res://images/cards/queen_of_clubs.png" id="1_u0tnx"]
+[ext_resource type="Texture2D" uid="uid://liby2rvntkxx" path="res://images/cards/queen_of_diamonds.png" id="2_1fu1y"]
+[ext_resource type="Texture2D" uid="uid://dwbohhvxe8fb1" path="res://images/icons/Refresh.png" id="2_jvt0t"]
+[ext_resource type="Texture2D" uid="uid://0bhockrugmir" path="res://images/cards/queen_of_hearts.png" id="3_n8wuw"]
+[ext_resource type="Texture2D" uid="uid://csanq3hgmjk4u" path="res://images/icons/Help.png" id="3_ya0nx"]
+[ext_resource type="Texture2D" uid="uid://4acttcepnu0e" path="res://images/cards/queen_of_spades.png" id="4_bwbcb"]
+[ext_resource type="Texture2D" uid="uid://dmnpgfg026a1v" path="res://images/icons/Verify.png" id="8_b8jxm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_62reb"]
+
+[node name="GameControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fhjxx")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.164706, 0.4, 0.164706, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_62reb")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="StatusBox" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Shuffle" type="Button" parent="Margin/VBoxContainer/StatusBox"]
+layout_mode = 2
+tooltip_text = "Shuffle"
+icon = ExtResource("2_jvt0t")
+
+[node name="Status" type="Label" parent="Margin/VBoxContainer/StatusBox"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "initial message"
+horizontal_alignment = 1
+max_lines_visible = 1
+
+[node name="Help" type="Button" parent="Margin/VBoxContainer/StatusBox"]
+layout_mode = 2
+tooltip_text = "Help"
+theme_override_font_sizes/font_size = 35
+icon = ExtResource("3_ya0nx")
+
+[node name="Cards" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Card1" type="TextureRect" parent="Margin/VBoxContainer/Cards"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+texture = ExtResource("1_u0tnx")
+stretch_mode = 5
+
+[node name="Card2" type="TextureRect" parent="Margin/VBoxContainer/Cards"]
+layout_mode = 2
+texture = ExtResource("2_1fu1y")
+stretch_mode = 5
+
+[node name="Card3" type="TextureRect" parent="Margin/VBoxContainer/Cards"]
+layout_mode = 2
+texture = ExtResource("3_n8wuw")
+stretch_mode = 5
+
+[node name="Card4" type="TextureRect" parent="Margin/VBoxContainer/Cards"]
+layout_mode = 2
+texture = ExtResource("4_bwbcb")
+stretch_mode = 5
+
+[node name="InputBox" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/InputBox"]
+layout_mode = 2
+text = "Enter an expression:"
+
+[node name="Expression" type="LineEdit" parent="Margin/VBoxContainer/InputBox"]
+custom_minimum_size = Vector2(400, 2.08165e-12)
+layout_mode = 2
+tooltip_text = "an expression that equals 24"
+max_length = 100
+
+[node name="Verify" type="Button" parent="Margin/VBoxContainer/InputBox"]
+layout_mode = 2
+tooltip_text = "Verify"
+icon = ExtResource("8_b8jxm")
+
+[node name="HelpPanel" type="PopupPanel" parent="."]
+initial_position = 2
+size = Vector2i(816, 485)
+
+[node name="HelpMargin" type="MarginContainer" parent="HelpPanel"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HelpVbox" type="VBoxContainer" parent="HelpPanel/HelpMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="HelpText" type="RichTextLabel" parent="HelpPanel/HelpMargin/HelpVbox"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[p align=center][font_size=50][b]Rule of 24[/b][/font_size]
+by Owen O'Malley[/p]
+
+[p][b]Rules:[/b]
+
+The player must create an expression that equals 24 using exactly the four numbers represented by the cards. Expressions may use +, -, *, or / as well as parentheses for grouping. All math is done with integers, so all division is rounded down (eg. 2/3 = 0 and 3/2 = 1). The program will automatically re-shuffle problems that are unsolvable.
+
+Cards are translated to numbers as:
+[ul]
+Ace = 1
+2 to 10 = 2 to 10
+Jack = 11
+Queen = 12
+King = 13
+[/ul]
+
+[b]Examples:[/b]
+
+[ul]
+1 * 2 * 3 * 4 = 24
+12 * 11 / 4 / 3 = 11
+12 * (11 / 4) / 3 = 8
+12 * ((11 / 4) / 3) = 0
+12 * (11 / ( 4 / 3)) = 132
+[/ul]
+[/p]
+"
+
+[node name="Done" type="Button" parent="HelpPanel/HelpMargin/HelpVbox"]
+layout_mode = 2
+text = "Done"
+
+[connection signal="resized" from="." to="." method="size_changed"]
+[connection signal="pressed" from="Margin/VBoxContainer/StatusBox/Shuffle" to="." method="shuffle"]
+[connection signal="pressed" from="Margin/VBoxContainer/StatusBox/Help" to="HelpPanel" method="show"]
+[connection signal="text_submitted" from="Margin/VBoxContainer/InputBox/Expression" to="." method="expression_changed"]
+[connection signal="pressed" from="Margin/VBoxContainer/InputBox/Verify" to="." method="verify"]
+[connection signal="pressed" from="HelpPanel/HelpMargin/HelpVbox/Done" to="HelpPanel" method="hide"]
