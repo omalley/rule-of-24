@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcsn3bahjjswf"
-path="res://.godot/imported/icon.svg-7967cc08d22e46b525e9855c7e0ca0ca.ctex"
+uid="uid://dps67jb037qr2"
+path="res://.godot/imported/rule-of-24-40.png-8de392edb1a2a5dd7791d58d80539b52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-7967cc08d22e46b525e9855c7e0ca0ca.ctex"]
+source_file="res://images/logo/rule-of-24-40.png"
+dest_files=["res://.godot/imported/rule-of-24-40.png-8de392edb1a2a5dd7791d58d80539b52.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

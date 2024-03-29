@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="Rule of 24"
+config/version="1.0.0"
 run/main_scene="res://control.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/image="res://images/logo/rule-of-24-1024.png"
-config/icon="res://data/icon.svg"
+config/icon="res://images/logo/rule-of-24.svg"
 
 [display]
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
-    <g id="Background" transform="matrix(0.346797,0,0,0.418339,-1.29782,-0.585909)">
+<svg width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g id="Background" transform="matrix(1.38719,0,0,1.67336,-5.19126,-2.34364)">
         <rect x="3.742" y="1.401" width="738.185" height="611.944" style="fill:rgb(41,164,41);"/>
     </g>
-    <g transform="matrix(0.25,0,0,0.25,0,0)">
+    <g>
         <g transform="matrix(2.20834,-0.718791,0.718791,2.20834,96.3001,225.342)">
             <path id="path5" d="M166.837,235.548C166.837,239.325 163.75,242.417 159.966,242.417L7.111,242.417C3.336,242.417 0.25,239.325 0.25,235.548L0.25,7.12C0.25,3.343 3.336,0.25 7.111,0.25L159.966,0.25C163.75,0.25 166.837,3.343 166.837,7.12L166.837,235.548Z" style="fill:white;fill-rule:nonzero;stroke:black;stroke-width:0.5px;"/>
             <g id="g7">
@@ -219,7 +219,9 @@
             </g>
         </g>
     </g>
-    <g transform="matrix(0.560933,0,0,0.560933,-45.3846,-105.258)">
-        <text x="105.714px" y="614.933px" style="font-family:'Optima-Regular', 'Optima';font-size:200px;fill:rgb(10,7,217);stroke:rgb(20,15,15);stroke-width:1.78px;stroke-linejoin:round;stroke-miterlimit:2;">24</text>
+    <g transform="matrix(2.24373,0,0,2.24373,-181.538,-421.031)">
+        <g id="Label">
+            <text x="105.714px" y="614.933px" style="font-family:'Optima-Regular', 'Optima';font-size:200px;fill:rgb(10,7,217);stroke:rgb(20,15,15);stroke-width:0.45px;stroke-linejoin:round;stroke-miterlimit:2;">24</text>
+        </g>
     </g>
 </svg>
