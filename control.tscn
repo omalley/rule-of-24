@@ -122,8 +122,10 @@ initial_position = 2
 size = Vector2i(816, 485)
 
 [node name="HelpMargin" type="MarginContainer" parent="HelpPanel"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 868.0
+offset_bottom = 537.0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
@@ -163,8 +165,25 @@ King = 13
 12 * ((11 / 4) / 3) = 0
 12 * (11 / ( 4 / 3)) = 132
 [/ul]
-[/p]
-"
+
+[b]About:[/b]
+
+Includes:
+[ul]rule-of-24:
+[ul]GPL v3
+[url]https://github.com/omalley/rule-of-24[/url][/ul]
+vector-play-cards:
+[ul]public domain
+[url]https://code.google.com/archive/p/vector-playing-cards/downloads[/url][/ul]
+[/ul]
+
+[b]Privacy:[/b]
+
+The game collects no data from or about the users. It shows no ads.
+
+If the user has told Apple to provide usage data to applications,
+Apple provides a count of the number of sessions.
+[/p]"
 
 [node name="Done" type="Button" parent="HelpPanel/HelpMargin/HelpVbox"]
 layout_mode = 2
@@ -175,4 +194,5 @@ text = "Done"
 [connection signal="pressed" from="Margin/VBoxContainer/StatusBox/Help" to="HelpPanel" method="show"]
 [connection signal="text_submitted" from="Margin/VBoxContainer/InputBox/Expression" to="." method="expression_changed"]
 [connection signal="pressed" from="Margin/VBoxContainer/InputBox/Verify" to="." method="verify"]
+[connection signal="meta_clicked" from="HelpPanel/HelpMargin/HelpVbox/HelpText" to="." method="handle_links"]
 [connection signal="pressed" from="HelpPanel/HelpMargin/HelpVbox/Done" to="HelpPanel" method="hide"]

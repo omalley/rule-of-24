@@ -60,20 +60,6 @@ func _process(_delta):
 			current_keyboard = new_keyboard
 			size_changed()
 
-func size_changed():
-	if controls != null && help_box != null:
-		if not has_windows:
-			# Set the controls to use the safe area, which avoids the cutouts.
-			var safe = DisplayServer.get_display_safe_area()
-			controls.set_size(Vector2(safe.size.x, safe.size.y - current_keyboard))
-			controls.set_position(safe.position)
-		# Set the help window to the same size & position.
-		help_panel.position = controls.position
-		help_box.set_custom_minimum_size(controls.size)
-		# Cause the system to reevalute the help popup size.
-		help_panel.size = Vector2.ZERO
-		help_box.update_minimum_size()
-
 # Load a json document as a dictionary of int arrays.
 # Used for loading the unsolvable inputs.
 func load_int_set(path: String):
@@ -99,6 +85,20 @@ func create_deck():
 			# Label each card with its rank and suit.
 			texture.set_meta(card_property, card)
 			card_deck.push_back(texture)
+
+func size_changed():
+	if controls != null && help_box != null:
+		if not has_windows:
+			# Set the controls to use the safe area, which avoids the cutouts.
+			var safe = DisplayServer.get_display_safe_area()
+			controls.set_size(Vector2(safe.size.x, safe.size.y - current_keyboard))
+			controls.set_position(safe.position)
+		# Set the help window to the same size & position.
+		help_panel.position = controls.position
+		help_box.set_custom_minimum_size(controls.size)
+		# Cause the system to reevalute the help popup size.
+		help_panel.size = Vector2.ZERO
+		help_box.update_minimum_size()
 
 # The user pushed the shuffle button.
 func shuffle():
@@ -131,6 +131,9 @@ func verify():
 # The user pressed return on the expression.
 func expression_changed(_new_text: String):
 	verify()
+
+func handle_links(url: Variant):
+	OS.shell_open(url)
 
 # Get the numbers that correspond to all of the cards.
 func get_inputs():
